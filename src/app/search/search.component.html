@@ -1,0 +1,35 @@
+<div class="container">
+    <h1 [(ngModel)]="filter" >Resultado de búsqueda para {{ filter }}</h1>
+
+    <div [(ngModel)]="articlesSearched">
+        <h6>Número de Páginas: {{ articlesSearched.pages }}</h6>
+        <h6>Quantidade de Respostas: {{ articlesSearched.size }}</h6>
+    </div>
+
+    <!-- Main Content-->
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center" *ngFor="let article of articlesSearched.data">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <!-- Post preview-->
+                <div class="post-preview">
+                    <a href="post.html">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img [src]="article.featured_media.thumbnail">
+                            </div>
+                            <div class="col-md-8">
+                                <h2 class="post-title">{{ article.title }}</h2>
+                                <h5 class="post-subtitle">{{ article.headline }}</h5>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="post-meta">Publicado en: {{ article.published | date: 'dd/MM/yyyy' }} | Modificado en: {{ article.modified | date: 'dd/MM/yyyy'}}
+                    </p>
+                </div>
+                <!-- Divider-->
+                <hr class="my-4" />
+            </div>
+        </div>
+    </div>
+    
+</div>

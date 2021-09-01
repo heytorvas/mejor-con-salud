@@ -1,0 +1,1 @@
+export const API = `https://api.beta.mejorconsalud.com/wp-json/mc/v2/posts`;
