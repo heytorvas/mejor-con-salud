@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SearchComponent } from './search/search.component';
 import { ArticleComponent } from './article/article.component';
 import { SearchService } from './search/search.service';
+import { ArticleService } from './article/article.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { SearchService } from './search/search.service';
     HeaderComponent,
     FooterComponent,
     SearchComponent,
-    ArticleComponent
+    ArticleComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,7 +28,7 @@ import { SearchService } from './search/search.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [SearchService],
+  providers: [SearchService, ArticleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

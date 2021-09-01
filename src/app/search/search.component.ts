@@ -21,7 +21,7 @@ export class SearchComponent implements OnInit {
   }
 
   searchArticle(): void {
-    this.searchService.getArticle(this.filter).subscribe((result: any) => {
+    this.searchService.getArticles(this.filter).subscribe((result: any) => {
       this.articlesSearched = result
     })
   }

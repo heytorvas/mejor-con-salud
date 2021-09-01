@@ -5,3 +5,8 @@ a:link {
 .post-title{
     color: #212529 !important;
 }
+
+.img-search {
+    width: 16em;
+    height: 13em;
+}

@@ -5,10 +5,11 @@ import { API } from '../app.api';
 @Injectable({
     providedIn: 'root'
 })
-export class SearchService {
-    constructor(private http: HttpClient) { }
+export class ArticleService {
 
-    getArticles(text: string) {
-        return this.http.get<any>(`${API}?search=${text}`);
+    constructor(private http: HttpClient) { }
+    
+    getArticle(id: number) {
+        return this.http.get<any>(`${API}/${id}`);
     }
 }

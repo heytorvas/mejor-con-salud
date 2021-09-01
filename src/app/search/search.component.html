@@ -12,18 +12,19 @@
             <div class="col-md-10 col-lg-8 col-xl-7">
                 <!-- Post preview-->
                 <div class="post-preview">
-                    <a href="post.html">
+                    <a [routerLink]="['..', 'article', article.id]">
                         <div class="row">
-                            <div class="col-md-4">
-                                <img [src]="article.featured_media.thumbnail">
+                            <div class="col-md-5 mt-3">
+                                <img [src]="article.featured_media.medium" class="img-search" /> 
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-7">
                                 <h2 class="post-title">{{ article.title }}</h2>
                                 <h5 class="post-subtitle">{{ article.headline }}</h5>
                             </div>
                         </div>
                     </a>
-                    <p class="post-meta">Publicado en: {{ article.published | date: 'dd/MM/yyyy' }} | Modificado en: {{ article.modified | date: 'dd/MM/yyyy'}}
+                    <p class="post-meta mt-2">
+                        Publicado en: {{ article.published | date: 'dd/MM/yyyy' }} | Modificado en: {{ article.modified | date: 'dd/MM/yyyy'}}
                     </p>
                 </div>
                 <!-- Divider-->
@@ -31,5 +32,4 @@
             </div>
         </div>
     </div>
-    
 </div>

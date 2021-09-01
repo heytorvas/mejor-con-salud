@@ -1,1 +1,11 @@
-<p>article works!</p>
+<div class="container" [(ngModel)]="article">
+    <h1>{{ article.title }}</h1>
+    <h3>{{ article.author.name }}</h3>
+    <h6>Revisado en: {{ article.reviewed | date: 'dd/MM/yyyy' }}</h6>
+
+    <div [innerHTML]="article.content" class="content"></div>
+
+    <div *ngFor="let tag of article.tags">
+        <p>{{ tag.name }}</p>
+    </div>
+</div>
