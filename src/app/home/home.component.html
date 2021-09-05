@@ -8,12 +8,23 @@
                     <h1 class="mb-5">Busca artículos, noticias, enfermedades, etc...</h1>
                     <form class="form-subscribe" id="articleForm">
                         <div class="row">
-                            <div class="col">
+                            <div class="col-md-8">
                                 <input class="form-control form-control-lg" id="articleInput" name="articleInput" [(ngModel)]="articleInput" type="text" placeholder="e.g. calabazas" />
                             </div>
-                            <div class="col-auto">
+                            <div class="col-md-2">
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Choose an option</mat-label>
+                                    <select matNativeControl [(ngModel)]="filterSelect" id="filterSelect" name="filterSelect" class="form-control form-control-lg">
+                                        <option *ngFor="let o of options" [value]="o.value">
+                                            {{o.name}}
+                                        </option>
+                                    </select>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-2">
                                 <button [disabled]="!articleInput" class="btn btn-primary btn-lg" id="submitButton" type="submit">
-                                    <a [routerLink]="['/search']" [queryParams]="{text: articleInput}">
+                                    <!-- <a [routerLink]="['/search']" [queryParams]="{text: articleInput}"> -->
+                                    <a (click)="goToSearch()">
                                         <img src="./assets/img/magnifying_glass.svg"/> 
                                     </a>
                                 </button>

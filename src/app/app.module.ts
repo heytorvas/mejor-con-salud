@@ -12,6 +12,9 @@ import { SearchComponent } from './search/search.component';
 import { ArticleComponent } from './article/article.component';
 import { SearchService } from './search/search.service';
 import { ArticleService } from './article/article.service';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { ArticleService } from './article/article.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NoopAnimationsModule,
+
+    MatSelectModule
   ],
   providers: [SearchService, ArticleService],
   bootstrap: [AppComponent]

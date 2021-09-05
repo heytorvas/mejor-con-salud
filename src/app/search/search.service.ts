@@ -8,7 +8,13 @@ import { API } from '../app.api';
 export class SearchService {
     constructor(private http: HttpClient) { }
 
-    getArticles(text: string) {
-        return this.http.get<any>(`${API}?search=${text}`);
+    getArticles(text: string, order: string) {
+        if (order == "" || order == undefined){
+            return this.http.get<any>(`${API}?search=${text}`);
+        }
+        else {
+            return this.http.get<any>(`${API}?search=${text}&orderby=${order}`);
+        }
+        
     }
 }

@@ -11,17 +11,19 @@ export class SearchComponent implements OnInit {
 
   articlesSearched!: any
   filter!: string
+  orderby!: string
 
   constructor(private route: ActivatedRoute, private searchService: SearchService) { }
 
   ngOnInit(): void {
     this.filter = this.route.snapshot.queryParamMap.get('text')!;
-    console.log(this.filter);
+    this.orderby = this.route.snapshot.queryParamMap.get('orderby')!;
+    console.log(this.filter, this.orderby);
     this.searchArticle()
   }
 
   searchArticle(): void {
-    this.searchService.getArticles(this.filter).subscribe((result: any) => {
+    this.searchService.getArticles(this.filter, this.orderby).subscribe((result: any) => {
       this.articlesSearched = result
     })
   }
