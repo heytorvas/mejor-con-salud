@@ -15,6 +15,7 @@ import { ArticleService } from './article/article.service';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatSelectModule } from '@angular/material/select';
+import { InputComponent } from './input/input.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { MatSelectModule } from '@angular/material/select';
     FooterComponent,
     SearchComponent,
     ArticleComponent,
+    InputComponent,
   ],
   imports: [
     BrowserModule,

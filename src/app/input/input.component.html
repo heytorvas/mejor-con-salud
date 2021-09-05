@@ -1,0 +1,24 @@
+<form class="form-subscribe" id="articleForm">
+    <div class="row">
+        <div class="col-md-6">
+            <input class="form-control form-control-lg" id="articleInput" name="articleInput" [(ngModel)]="articleInput" type="text" placeholder="e.g. calabazas" />
+        </div>
+        <div class="col-md-4">
+            <mat-form-field appearance="fill">
+                <select [(ngModel)]="filterSelect" id="filterSelect" name="filterSelect" class="form-control form-control-lg">
+                    <option *ngFor="let o of options" [value]="o.value">
+                        {{o.name}}
+                    </option>
+                </select>
+            </mat-form-field>
+        </div>
+        <div class="col-md-2">
+            <button [disabled]="!articleInput" class="btn btn-primary btn-lg" id="submitButton" type="submit">
+                <!-- <a [routerLink]="['/search']" [queryParams]="{text: articleInput}"> -->
+                <a (click)="goToSearch()">
+                    <img src="./assets/img/magnifying_glass.svg"/> 
+                </a>
+            </button>
+        </div>
+    </div>
+</form>

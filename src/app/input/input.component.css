@@ -1,0 +1,9 @@
+#submitButton {
+    background-color: rgb(65, 159, 185) !important;
+    border-color: rgb(65, 159, 185) !important;
+}
+
+#filterSelect {
+    margin-right: 2em;
+    margin-top: -1em;
+}
