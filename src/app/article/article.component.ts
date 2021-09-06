@@ -17,7 +17,7 @@ export class ArticleComponent implements OnInit {
   ngOnInit(): void {
     this.articleService.getArticle(this.route.snapshot.params.id).subscribe((result) => {
       this.article = result;
-      this.title.setTitle(result.title)
+      this.title.setTitle(`MejorConSalud - ${result.title}`)
       this.meta.addTag({
         name: 'description',
         content: result.headline

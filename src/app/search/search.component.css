@@ -3,7 +3,11 @@ a:link {
 }
 
 .post-title{
-    color: #212529 !important;
+    color: #FF93C7 !important;
+}
+
+.post-subtitle {
+    color: #419FB9;
 }
 
 .img-search {

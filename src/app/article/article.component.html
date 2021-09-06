@@ -2,14 +2,16 @@
     <title>{{ article.title }}</title>
 </head>
 
-<div class="container" [(ngModel)]="article">
-    <h1>{{ article.title }}</h1>
+<div class="container text-center" [(ngModel)]="article">
+    <h1 class="mt-3">{{ article.title }}</h1>
     <h3>{{ article.author.name }}</h3>
-    <h6>Revisado en: {{ article.reviewed | date: 'dd/MM/yyyy' }}</h6>
+    <h6>Publicado en: {{ article.published | date: 'dd/MM/yyyy' }} | Revisado en: {{ article.modified | date: 'dd/MM/yyyy' }}</h6>
+    <div class="category">
+        <ul *ngFor="let tag of article.categories">
+            <li>{{ tag.name }}</li>
+        </ul>
+    </div>
 
     <div [innerHTML]="article.content" class="content"></div>
-
-    <div *ngFor="let tag of article.tags">
-        <p>{{ tag.name }}</p>
-    </div>
+    
 </div>
